@@ -1,34 +1,15 @@
 from __future__ import annotations
-from chatterbot import ChatBot
-from chatterbot.trainers import ListTrainer
+from chatterbot import ChatBot, filters
+from chatterbot.trainers import ChatterBotCorpusTrainer
 
 
 def training(Roberto_ai: ChatBot):
-    trainer = ListTrainer(Roberto_ai)
-    trainer.train([
-        "Hello, Dr. Roberto Rosemario. I've been experiencing persistent headaches lately, and I'm a bit worried "
-        "about it. ",
-        "Hello there! I'm sorry to hear about your headaches. Let's see how we can help. Would you like to schedule "
-        "an appointment at our hospital? ",
-        "Yes, please. I think it's best to get it checked out.",
-        "Absolutely. I'll go ahead and make an appointment for you. Based on your description, it seems like it might "
-        "be important to get this checked soon. I'll note it down and provide you with a report letter. "
-    ])
-    trainer.train([
-        "what is your name?",
-        "my name is Roberto but you can call me Doctor Roberto."
-        "how can you help me?",
-        "I can help you by, answer about your medical questions, or making your appointment. or talking your some joke."
-
-    ])
-    trainer.train([
-        "tell me some joke?",
-        "lalalallalalalalalalal"
-    ])
+    trainer = ChatterBotCorpusTrainer(Roberto_ai)
+    trainer.train('chatterbot.corpus.english')
 
 
 def init_bot() -> ChatBot:
-    Roberto_ai = ChatBot('Roberto Rosemario')
+    Roberto_ai = ChatBot('Roberto Rosemario',filters=[filters.get_recent_repeated_responses])
     training(Roberto_ai)
     return Roberto_ai
 
@@ -44,7 +25,7 @@ def conversation():
     Roberto: ChatBot = init_bot()
     while True:
         user_input: str = input("Type Something to Roberto: ")
-        if user_input == "Quit":
+        if user_input.lower() == "quit":
             break
 
         try:
