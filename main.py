@@ -1,15 +1,16 @@
 from __future__ import annotations
+import json
+import io
 from chatterbot import ChatBot, filters
 from chatterbot.trainers import ChatterBotCorpusTrainer
 
 
 def training(Roberto_ai: ChatBot):
     trainer = ChatterBotCorpusTrainer(Roberto_ai)
-    trainer.train('chatterbot.corpus.english')
-
+    trainer.train('chatterbot.corpus.english', "C:/Users/yuval/PycharmProjects/chat-ai/knowledgeExamples.json")
 
 def init_bot() -> ChatBot:
-    Roberto_ai = ChatBot('Roberto Rosemario',filters=[filters.get_recent_repeated_responses])
+    Roberto_ai = ChatBot('Roberto Rosemario')
     training(Roberto_ai)
     return Roberto_ai
 

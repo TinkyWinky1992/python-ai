@@ -1,0 +1,17 @@
+{
+  "Examples": {
+    "greeting": {
+      "Input": [
+        "hi",
+        "hello",
+        "how you doing?"
+      ],
+      "Output": [
+        "hi my friend",
+        "hello",
+        "hi, im doing good, what about you?",
+        "how are you?"
+      ]
+    }
+  }
+}
