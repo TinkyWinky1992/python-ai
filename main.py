@@ -1,17 +1,13 @@
 from __future__ import annotations
-import json
-import io
-from chatterbot import ChatBot, filters
-from chatterbot.trainers import ChatterBotCorpusTrainer
+from chatterbot import ChatBot
+from RobertoAI import trainer
 
-
-def training(Roberto_ai: ChatBot):
-    trainer = ChatterBotCorpusTrainer(Roberto_ai)
-    trainer.train('chatterbot.corpus.english', "C:/Users/yuval/PycharmProjects/chat-ai/knowledgeExamples.json")
 
 def init_bot() -> ChatBot:
-    Roberto_ai = ChatBot('Roberto Rosemario')
-    training(Roberto_ai)
+    Roberto_ai = ChatBot('Roberto Rosemario', logic_adapters=[
+        "chatterbot.logic.BestMatch"
+    ])
+    trainer.training(Roberto_ai)
     return Roberto_ai
 
 
@@ -30,6 +26,8 @@ def conversation():
             break
 
         try:
+            # Display progress bar during conversation loop
+            print("Processing input...")  # Static progress message
             Roberto_res = response(user_input, Roberto)
             print(Roberto_res)
         except(KeyboardInterrupt, EOFError, SystemExit):

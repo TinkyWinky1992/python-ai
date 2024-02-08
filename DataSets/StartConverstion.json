@@ -1,0 +1,17 @@
+{
+  "Examples": {
+    "greeting": {
+      "1": [
+        "hi",
+        "Hello, how can i assist  you today?"
+      ],
+      "2": [
+        "Hello",
+        "hi, how are you feeling?"
+      ],
+      "3":[
+
+      ]
+    }
+  }
+}
