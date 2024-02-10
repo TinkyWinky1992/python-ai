@@ -11,11 +11,10 @@ reddit = praw.Reddit(client_id=config["id"],
 def casual_conversation():
     # Specify the subreddit you want to scrape
     subreddit_name = "CasualConversation"
-    subreddit = reddit.subreddit(subreddit_name)
+    subreddit = reddit.subreddit(subreddit_name).top(limit=10)
 
     # Stream all comments from the subreddit
     for comment in subreddit.stream.comments():
         print(comment.body)
-
 
 casual_conversation()
