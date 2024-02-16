@@ -4,7 +4,8 @@
       "Input": [
         "hi",
         "hello",
-        "how you doing?"
+        "how you doing?",
+        "hi, im doing good, what about you?"
       ],
       "Output": [
         "hi my friend",
