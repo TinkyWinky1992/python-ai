@@ -4,8 +4,8 @@ import praw
 from Settings import RedditSettings
 from rake_nltk import Rake
 
-# nltk.download('punkt')
-# nltk.download('stopwords')
+nltk.download('punkt')
+nltk.download('stopwords')
 
 # Authenticate with Reddit API
 config = RedditSettings.get_config()

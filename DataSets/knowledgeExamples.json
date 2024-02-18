@@ -1,18 +1,21 @@
 {
   "Examples": {
-    "greeting": {
-      "Input": [
+    "greeting": [
         "hi",
         "hello",
         "how you doing?",
-        "hi, im doing good, what about you?"
-      ],
-      "Output": [
-        "hi my friend",
-        "hello",
-        "hi, im doing good, what about you?",
-        "how are you?"
-      ]
+        "hi, im fine thanks for asking , what about you?",
+        "im here to get you the right care you need :) "
+    ],
+    "when client having a problem":[
+      "Oh no, that sound not good at all. dont worry my friend im here to help you",
+      "I'm sorry to hear this is what happened to you. I will immediately help you with your problem"
+    ],
+    "providing content about problem":[
+     "first of all, can you please give me more details about your problem",
+      "can you please give me details about your situation"
+    ]
+
+
     }
   }
-}
