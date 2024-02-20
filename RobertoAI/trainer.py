@@ -6,10 +6,6 @@ import utils
 from tqdm import tqdm
 
 
-
-
-
 def training(Roberto_ai: ChatBot):
     trainer = ChatterBotCorpusTrainer(Roberto_ai)
-    trainer.train('chatterbot.corpus.english', "C:/Users/yuval/PycharmProjects/chat-ai/DataSets/knowledgeExamples.json")
-
+    trainer.train('chatterbot.corpus.english', "C:/Users/USER/projects/python-ai/DataSets/knowledgeExamples.json")
