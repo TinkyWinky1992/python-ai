@@ -4,8 +4,8 @@ import praw
 from Settings import RedditSettings
 from rake_nltk import Rake
 
-nltk.download('punkt')
-nltk.download('stopwords')
+# nltk.download('punkt')
+# nltk.download('stopwords')
 
 # Authenticate with Reddit API
 config = RedditSettings.get_config()
@@ -51,4 +51,3 @@ def doctor_commadns_data():
             print(comment.body)
 
 
-detect_subjects("hello doctor, i have a broken leg. last night i run into the streers and fall down and broke my leg.")
